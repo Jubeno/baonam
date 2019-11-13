@@ -3,6 +3,9 @@ import getConfig from 'next/config'
 // import EncodeUrl from '@/utils/encode'
 // import Link from '@/utils/ActiveLink';
 import log from '@/utils/log';
+import WOW from 'wowjs';
+import '../static/web/js/lib/biggerlink.js';
+
 
 const { publicRuntimeConfig } = getConfig()
 class Index extends React.PureComponent {
@@ -59,14 +62,20 @@ class Index extends React.PureComponent {
   //   const dataArr = dataArrticles.length > 0 && dataArrticles[0].Articles.length >= 5 ? dataArrticles[0].Articles.slice(startIndex, endIndex) : dataArrticles[0].Articles
   //   this.setState({ Articles: dataArr, total: dataArrticles[0].Articles.length })
   // }
+  
+  componentDidMount() {
+    new WOW.WOW().init();
 
+    $('.clientSet .clientList li .inside').biggerlink();
+
+  }
   render() {
     const { dataArticle } = this.props;
 
     log(' dataArticle%o', dataArticle)
     return (
       <React.Fragment>
-        <section className="awe-section-8">
+        {/* <section className="awe-section-8">
           <section className="section_danhgia">
             <div className="wrap_full">
               <div className="container">
@@ -104,7 +113,37 @@ class Index extends React.PureComponent {
               </div>
             </div>
           </section>
-        </section>
+        </section> */}
+        
+        <div className="clientSet wow fadeIn" style={{visibility: 'visible', animationName: 'fadeIn'}}>
+          <div className="inner">
+            <div className="info">
+              <h2 className="bhead center">DỊCH VỤ</h2>
+              <ul className="clientList">
+                {
+                  (dataArticle || []).map(item => {
+                    const img = `${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image || ''}`
+                    // console.log(item);
+                    return (
+                      <li className="item1 wow fadeInLeft" data-wow-delay="0.1s" style={{visibility: 'visible', animationDelay: '0.1s', animationName: 'fadeInLeft'}}>
+                        <div className="inside bl-hot" style={{cursor: 'pointer'}}>
+                          <p className="photo"><a href="/" className="bl-bigger"><img src={img} alt={item.title} /></a></p>
+                          <div className="desc">
+                            <p className="name"><a href="/" className="bl-bigger">{item.title}</a></p>
+                            <div className="text">{item.shortDescription || ''}</div>
+                          </div>
+                        </div>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+              <p className="more"><a href="http://hanoiplasticsurgery.org/nhan-su/" className="btn1"><span>Xem thêm</span></a></p>
+            </div>
+          </div>
+        </div>
+
+
 
       </React.Fragment>
     );

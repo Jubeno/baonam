@@ -7,7 +7,9 @@ import { findRoute } from '@/utils/helpers';
 import { routes } from '@/config/router.config';
 // import getConfig from 'next/config'
 import Link from '@/utils/ActiveLink';
-
+import 'scrolltofixed';
+import 'jquery';
+import '../static/web/js/lib/common.js';
 // const { publicRuntimeConfig } = getConfig()
 const routesWeb = routes.web;
 
@@ -34,7 +36,9 @@ class Header extends PureComponent {
       keyChildren: ""
     }
   }
-
+  componentDidMount() {
+    $('#header').scrollToFixed();
+  }
   showMenu = () => {
     const { openMenu } = this.state
     this.setState({ openMenu: !openMenu })
@@ -225,7 +229,7 @@ class Header extends PureComponent {
                                     <div className="navInner">
                                       <div className="navInside clearfix split2">
                                         <div className="navCol">
-                                          <p className="caption"><span>Tiêu đề menu: chưa điền</span></p>
+                                          <p className="caption"><span>Dịch vụ phòng khám</span></p>
                                           <ul className="navList1 clearfix">
                                             
                                             {/* MENU LEVEL 2 */}
@@ -273,9 +277,9 @@ class Header extends PureComponent {
                 if (item.children && item.children.length !== 0) {
                   return (
                     <li className="level0 level-top parent" key={`hearder_${item.id}`}>
-                      <a >{item.name}</a>
+                      <a href="/" >{item.name}</a>
                       <i className="fa fa-angle-down" onClick={() => this.openChildren(item.id)}></i>
-                      <ul className="level0" style={{ display: keyChildren === item.id && openMenuChildren ? "block" : 'none' }} >
+                      <ul className="level0" style={{ display: keyChildren === item.id && openMenuChildren ? "block" : 'none' }}>
                         {item.children.map((child) => {
                           return (
                             <li className="level1" key={`hearder_${child.id}`}>

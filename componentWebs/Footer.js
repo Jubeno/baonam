@@ -59,7 +59,7 @@ class Footer extends PureComponent {
     const places = dataSite && dataSite.places
     return (
       <React.Fragment>
-        <footer className="footer">
+        {/* <footer className="footer">
           <div className="topfoter">
             <div className="container">
               <div className="top-footer">
@@ -84,19 +84,9 @@ class Footer extends PureComponent {
                           <a className="fone" href={`tel:${places.mobile}`}><span className="b">Hotline: &nbsp;</span>{places.mobile}</a>
                         </span>
                       </li>
-                      {/* <li>
-                        <span className="icon"><i className="fa fa-envelope" /></span>
-                        <span className="right">
-                          <a href={`mailto:${publicRuntimeConfig.CONTACT_EMAIL}`}><span className="b">Email:</span> &nbsp;{publicRuntimeConfig.CONTACT_EMAIL}</a>
-                        </span>
-                      </li> */}
+                     
                     </ul>
-                    {/* <div className="social">
-                      <a className="fb" href="https://www.facebook.com/"><i className="fa fa-facebook" /></a>
-                      <a className="gg" href="https://twitter.com/"><i className="fa fa-twitter" /></a>
-                      <a className="rss" href="https://plus.google.com/?hl=vi"><i className="fa fa-google-plus" /></a>
-                      <a className="be" href="https://www.youtube.com/"><i className="fa fa-youtube" /></a>
-                    </div> */}
+                    
                   </div>
                   <div className="col-lg-5 col-md-5 col-sm-8 col-xs-12 ">
                     <div className="row rowpading">
@@ -180,7 +170,107 @@ class Footer extends PureComponent {
             </div>
           </div>
           <a href="#" id="back-to-top" className="backtop back-to-top" title="Lên đầu trang"><i className="fa fa-arrow-up" /></a>
+        </footer> */}
+
+        <footer id="footer">
+          <div className="fInner clearfix">
+
+            <div className="fSet set1">
+              <p className="fLogo">
+                <Link path="/index" href="/" className="logo-wrapper " >
+                  <img src="/static/web/images/logo_1.png" alt="logo Medisan"  />
+                </Link>
+                <span>{places.name}</span>
+              </p>
+              <p><span className="calling">Bác sỹ tư vấn (24/7) <em>{places.mobile}</em></span></p>
+                        <li><span><i className="lnr lnr-map-marker" /> {places.address}</span></li>
+            </div>
+
+            <div className="fSet set2">
+              <p className="caption"><Link className="ef caption" path="/index" href="/" key={`product_home`} >Trang chủ</Link></p>
+              <ul className="addrset">
+
+                {
+                  (list).map(item => {
+                    if (item.children && item.children.length !== 0) {
+                      return null
+                    }
+                    return <li key={`footer_${item.id}`}><Link className="ef" path={`/${redirectMenu(item) && redirectMenu(item).component || ''}?id=${this.getIdCategory(item.url || '')}`} href={item.url} key={`product_${item.id}`}>{item.name}</Link></li>
+
+                  })
+                }
+                
+              </ul>
+            </div>
+
+            <div className="fSet set3">
+              <p className="caption"><Link className="ef caption" path="/index" href="/" key={`product_home`} >Dịch vụ phòng khám</Link></p>
+              <ul className="addrset">
+
+                {
+                  (list).map(item => {
+                    if (item.children && item.children.length !== 0) {
+                      return item.children.map((child) => {
+                        return (
+                          <li key={`footer_${child.id}`}><Link className="ef" path={`/User/Category?categoryId=${this.getIdCategory(child.url || '').length > 0 && this.getIdCategory(child.url || '')[0] || ""}&parentId=${this.getIdCategory(child.url || '').length > 1 && this.getIdCategory(child.url || '')[1] || ""}`} href={child.url} key={`product_${child.id}`}>{child.name}</Link></li>
+                        )
+                      })
+                    }
+                    return null
+                  })
+                }
+                
+              </ul>
+            </div>
+
+            
+
+            <div className="fSet set4">
+              {/* <p className="caption">Follow us</p>
+              <ul className="social">
+                <li><a href="https://www.facebook.com/" target="_blank"><span className="fb">fb</span></a></li>
+                <li><a href="https://twitter.com/" target="_blank"><span className="twitter">twitter</span></a></li>
+                <li><a href="https://plus.google.com/" target="_blank"><span className="gplus">gplus</span></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><span className="insta">insta</span></a></li>
+              </ul>
+              <p className="booking"><a href="http://hanoiplasticsurgery.org/lien-he/" className="btn1"><span><i className="lnr lnr-pencil" /> <em>Đặt hẹn </em>tư vấn</span></a></p> */}
+              <div className="wraplock">
+                <div className="imagelock"><img src="/static/web/images/clock.png" alt="clock" /></div>
+                <h4>Giờ làm việc</h4>
+                <div className="innerlock">
+                  <div className="list">
+                    <span className="left">Thứ 2</span>
+                    <span className="right">16h00- 20h00</span>
+                  </div>
+                  <div className="list">
+                    <span className="left">Thứ 3</span>
+                    <span className="right">16h00 - 20h00</span>
+                  </div>
+                  <div className="list">
+                    <span className="left">Thứ 4</span>
+                    <span className="right">16h00- 20h00</span>
+                  </div>
+                  <div className="list">
+                    <span className="left">Thứ 5</span>
+                    <span className="right">16h00 - 20h00</span>
+                  </div>
+                  <div className="list">
+                    <span className="left">Thứ 6</span>
+                    <span className="right">16h00- 20h00</span>
+                  </div>
+                  <div className="list">
+                    <span className="left">Thứ 7, CN</span>
+                    <span className="right">16h00 - 20h00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <p id="copyright">@ Bản quyền thuộc về <a className="color" href="http://nbm.vn" target="_blank" >NBM.VN</a></p>
         </footer>
+
+        
       </React.Fragment>
     );
   }
