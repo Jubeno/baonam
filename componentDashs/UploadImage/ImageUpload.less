@@ -1,0 +1,59 @@
+.container {
+  width        : 100%;
+  padding-right: 0px;
+  padding-left : 0px;
+  margin-right : auto;
+  margin-left  : auto;
+  display      : none;
+  border       : 1px solid yellowgreen;
+
+  :global {
+    #crop-container-transform:hover #btnConfirmCropper {
+      display      : block !important;
+      // background: red !important;
+    }
+    
+    #crop-container-insertLogo:hover #btnConfirmSave {
+      display      : block !important;
+      // background: red !important;
+    }
+  }
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  .imgContainer {
+    margin-bottom: 1rem;
+    // max-height   : 300px;
+    min-height   : 200px;
+
+    @media (min-width: 768px) {
+      min-height: 300px;
+    }
+  }
+
+  .imgContainerLogo {
+    margin-bottom: 1rem;
+    // max-height   : 300px;
+    min-height   : 200px;
+    text-align: center;
+    position: relative;
+    background: #000 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC') ;
+    @media (min-width: 768px) {
+      min-height: 300px;
+    }
+  }
+}

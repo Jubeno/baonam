@@ -1,0 +1,108 @@
+@charset "utf-8";
+.confirmed_cookie {
+    display: none;
+    z-index: 22;
+    position: fixed;
+    bottom: 0;
+    padding: 14px 0;
+    background-color: #ff5700;
+    width: 100%;
+    text-align: left;
+    font-size: .85rem;
+    color: #fff;
+    border-top: 0
+}
+
+.confirmed_cookie .cookie_text {
+    margin: 0 0 .8rem
+}
+
+.confirmed_cookie .change_back_text,
+.confirmed_cookie .cookie_text {
+    text-align: center
+}
+
+.confirmed_cookie .button_orange {
+    display: inline-block;
+    margin-right: 20px;
+    border: 2px solid #fff;
+    position: relative;
+    font-size: .9rem;
+    line-height: 39px;
+    vertical-align: top
+}
+
+.confirmed_cookie .button_orange.i_agree span {
+    display: table-cell;
+    height: 40px;
+    vertical-align: middle
+}
+
+.confirmed_cookie .button_orange.i_agree {
+    line-height: 1.2;
+    margin-right: 0;
+    padding: 0 1.8rem 0 1rem
+}
+
+.confirmed_cookie .r_more:after {
+    content: "➜";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin: -6px 0 0;
+    line-height: 1;
+    font-size: .8rem
+}
+
+.confirmed_cookie .close:after {
+    content: "\2714";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin: -6px 0 0;
+    line-height: .9;
+    font-size: .9rem;
+    font-weight: 700
+}
+
+@media(max-width:768px) {
+    .confirmed_cookie {
+        padding: 12px 0 14px
+    }
+    .confirmed_cookie .cookie_text {
+        margin: 0 0 .6rem
+    }
+    .confirmed_cookie .button_orange:after {
+        opacity: 0
+    }
+}
+
+@media(max-width:680px) {
+    .confirmed_cookie .button_orange {
+        width: 100%;
+        margin: 10px 0 0
+    }
+    .confirmed_cookie .button_orange.i_agree {
+        display: table
+    }
+    .confirmed_cookie .button_orange:first-child {
+        margin: 0
+    }
+}
+
+@media(max-width:400px) {
+    .confirmed_cookie {
+        font-size: .75rem
+    }
+    .confirmed_cookie .button_orange {
+        font-size: .8;
+        padding: 0 3px
+    }
+    .confirmed_cookie .button_orange:after {
+        opacity: 0
+    }
+}

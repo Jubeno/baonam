@@ -1,0 +1,60 @@
+.myUpload {
+  :global {
+    .ant-upload-select-picture-card i {
+      font-size: 32px;
+      color    : #999;
+    }
+
+    .ant-upload-select-picture-card .ant-upload-text {
+      margin-top: 8px;
+      color     : #666;
+    }
+
+    .ant-upload.ant-upload-select-picture-card {
+      border             : inherit;
+      position           : absolute;
+      background-color   : inherit;
+      width              : auto;
+      height             : auto;
+      // margin-left     : 160px;
+      left               : 5px;
+      // top             : 165px;
+      display            : none;
+    }
+
+    .ant-upload-list-picture-card {
+      position: relative;
+    }
+
+    .ant-upload.ant-upload-select-picture-card .ant-upload {
+      padding: 0px
+    }
+
+    @media(max-width:480px) {
+      .ant-upload-list-picture-card .ant-upload-list-item {
+        width : 128px;
+        height: 128px;
+      }
+    }
+
+    @media(min-width:480px) {
+      .ant-upload-list-picture-card .ant-upload-list-item {
+        width : 180px;
+        height: 180px;
+      }
+    }
+  }
+}
+
+// .myUpload1 {
+//   // .ant-upload.ant-upload-select-picture-card {
+//   //   display: none;
+//   // }
+
+//   :hover .ant-upload-select-picture-card {
+//     background-color: black
+//   }
+//   // .ant-upload-select-picture-card {
+//   //   display: block;
+//   // }
+// }

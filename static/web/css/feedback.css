@@ -1,0 +1,329 @@
+.black_cl {
+    background-color: #000
+}
+
+.green_cl {
+    background-color: #a3e300
+}
+
+.yellow_cl {
+    background-color: #f8ca00
+}
+
+.gray_cl {
+    background-color: #686868
+}
+
+.orange_cl {
+    background-color: #e6411c
+}
+
+.lilac_cl {
+    background-color: #42185f
+}
+
+.white_cl_text {
+    color: #fff
+}
+
+.text_review_cl {
+    position: relative
+}
+
+.hide_review_cl {
+    display: none;
+    opacity: 0
+}
+
+.content_review_cl {
+    position: relative;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    overflow: hidden
+}
+
+.content_review_cl .img_review_cl {
+    height: 130px
+}
+
+.logo_bottom_cl {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    opacity: 0;
+    height: 40px;
+    width: 105px;
+    -webkit-transition: opacity .3s linear;
+    -moz-transition: opacity .3s linear;
+    -o-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+    line-height: 1;
+    text-align: right
+}
+
+.content_review_cl:hover .review_center_cont .vmiddle_img {
+    height: 0;
+    opacity: 0;
+    -webkit-transition: opacity .3s linear;
+    -moz-transition: opacity .3s linear;
+    -o-transition: opacity .3s linear;
+    transition: opacity .3s linear
+}
+
+.content_review_cl.big_review:hover .review_center_cont .vmiddle_img {
+    display: none
+}
+
+.content_review_cl:hover .text_review_cl {
+    height: auto
+}
+
+.content_review_cl:hover .text_review_cl p {
+    display: none
+}
+
+.content_review_cl:hover .text_review_cl p.hide_review_cl {
+    display: block;
+    opacity: 1
+}
+
+.content_review_cl:hover .logo_bottom_cl {
+    opacity: 1
+}
+
+.logo_bottom_cl img {
+    max-height: 40px;
+    max-width: 105px
+}
+
+.happy_clients_backgr {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0
+}
+
+.review_center_cont,
+.link_case_study,
+.logo_bottom_cl {
+    z-index: 2
+}
+
+.review_center_cont {
+    position: relative;
+    max-width: 245px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: .85rem
+}
+
+.review_center_cont .vmiddle_img img {
+    max-height: 78px
+}
+
+.review_center_cont .vmiddle_img {
+    height: 120px;
+    -webkit-transition: height .3s linear, opacity .6s linear;
+    -moz-transition: height .3s linear, opacity .6s linear;
+    -o-transition: height .3s linear, opacity .6s linear;
+    transition: height .3s linear, opacity .6s linear
+}
+
+.text_review_cl {
+    height: 175px;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 39px
+}
+
+.text_review_cl p {
+    padding: 0;
+    margin: 0;
+    max-height: 136px;
+    overflow: hidden
+}
+
+.text_review_cl p.hide_review_cl {
+    max-height: none
+}
+
+.signature_review {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 1rem
+}
+
+.signature_review .name_signature {
+    color: #fff
+}
+
+.signature_review .position_signature {
+    color: #858585;
+    font-size: .85rem
+}
+
+.white_cl_text .signature_review .position_signature {
+    color: #fff
+}
+
+.green_cl .position_signature {
+    color: #fff
+}
+
+.yellow_cl .review_center_cont,
+.yellow_cl .position_signature,
+.yellow_cl .name_signature {
+    color: #000
+}
+
+.orange_cl .review_center_cont,
+.orange_cl .position_signature,
+.orange_cl .name_signature {
+    color: #fff
+}
+
+.happy_clients.vertical_padding {
+    padding-bottom: 0
+}
+
+.happy_clients .one_button_ban {
+    text-align: center
+}
+
+.happy_clients .hp_clients_slider.hp_clients_default .one_slide_client {
+    display: none
+}
+
+.mini_client_bl {
+    margin: 20px 0 35px
+}
+
+.mini_client_bl .home {
+    text-align: center
+}
+
+.mini_client_bl .home > .logom_client {
+    width: 145px
+}
+
+.mini_client_bl .logom_client {
+    height: 84px;
+    box-sizing: border-box;
+    padding: 12px 10px;
+    width: 170px;
+    display: inline-block;
+    letter-spacing: normal;
+    filter: grayscale(100%);
+    opacity: .4
+}
+
+.mini_client_bl .logom_client:hover {
+    filter: grayscale(0%);
+    opacity: 1
+}
+
+.logom_client .vmiddle_img {
+    height: 40px;
+    overflow: hidden
+}
+
+.mini_client_bl .logom_client img {
+    max-height: 40px;
+    max-width: 100%
+}
+
+#mini_clients_slider {
+    letter-spacing: -.36em;
+    text-align: center;
+    height: 89px;
+    overflow: hidden
+}
+
+#mini_clients_slider.home {
+    height: auto
+}
+
+.link_case_study {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin: 0 0 0 -88px;
+    width: 176px;
+    text-decoration: none;
+    text-align: center;
+    font-size: .9rem;
+    height: 29px
+}
+
+.link_case_study span {
+    position: relative;
+    z-index: 1;
+    color: #dcdcdc;
+    opacity: .8;
+    height: 29px;
+    line-height: 25px;
+    -webkit-transition: color .3s linear, opacity .3s linear;
+    -moz-transition: color .3s linear, opacity .3s linear;
+    -o-transition: color .3s linear, opacity .3s linear;
+    transition: color .3s linear, opacity .3s linear
+}
+
+.link_case_study:after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 146px;
+    height: 0;
+    border-bottom: 29px solid #f5f5f5;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-transition: border-color .3s linear, opacity .3s linear;
+    -moz-transition: border-color .3s linear, opacity .3s linear;
+    -o-transition: border-color .3s linear, opacity .3s linear;
+    transition: border-color .3s linear, opacity .3s linear;
+    opacity: .3
+}
+
+.link_case_study:hover span {
+    color: #282828;
+    opacity: 1
+}
+
+.link_case_study:hover:after {
+    opacity: 1
+}
+
+@media(max-width:1200px) {
+    .happy_clients .container_center,
+    .about_us_write .container_center {
+        padding: 0 5px
+    }
+    .one_button_ban.feeback-all {
+        margin-top: 20px !important
+    }
+}
+
+@media(max-width:768px) {
+    .text_review_cl p {
+        font-size: .8rem;
+        line-height: 1.1
+    }
+    .logo_bottom_cl {
+        right: 15px;
+        bottom: 15px
+    }
+}
+
+@media(max-width:480px) {
+    .review_center_cont .vmiddle_img img {
+        max-width: 100%
+    }
+}
