@@ -7,9 +7,9 @@ import { findRoute } from '@/utils/helpers';
 import { routes } from '@/config/router.config';
 // import getConfig from 'next/config'
 import Link from '@/utils/ActiveLink';
-import 'scrolltofixed';
+import '../static/web/js/lib/jquery-scrolltofixed';
 import 'jquery';
-import '../static/web/js/lib/common.js';
+import '../static/web/js/lib/common';
 // const { publicRuntimeConfig } = getConfig()
 const routesWeb = routes.web;
 
