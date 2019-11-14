@@ -12,7 +12,7 @@ import log from '@/utils/log';
 
 
 // co them dong nay khong
-
+//co nhe
 const { publicRuntimeConfig } = getConfig()
 class Index extends React.PureComponent {
   constructor(props) {
