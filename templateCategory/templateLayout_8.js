@@ -8,6 +8,7 @@ import '../static/web/js/lib/biggerlink';
 import $ from 'jquery';
 import log from '@/utils/log';
 
+
 const { publicRuntimeConfig } = getConfig()
 class Index extends React.PureComponent {
   constructor(props) {
