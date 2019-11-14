@@ -5,7 +5,7 @@ import Link from '@/utils/ActiveLink';
 
 const { publicRuntimeConfig } = getConfig()
 class Index extends React.PureComponent {
-
+  // Nguyen tac kham chua
   render() {
     const { data, dataArticle } = this.props;
     const tdataArticle = dataArticle && dataArticle.length >= 4 ? dataArticle.slice(0, 5) : dataArticle

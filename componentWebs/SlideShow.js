@@ -7,16 +7,17 @@ const { publicRuntimeConfig } = getConfig()
 
 // import styles from './Slides.less';
 
+// Breadcrumb - Khong thay doi
+
 const SlideShow = ({ advertisments, dataCategoryInfo }) => (
-  <div className="breadcrumb_background" >
+  <div className="breadcrumb_background">
     <div className="title_full">
       <div className="container a-center">
         <p className="title_page_breadcrumb">{dataCategoryInfo || ''}</p>
       </div>
     </div>
     <section className="bread-crumb">
-      <span className="crumb-border">
-      </span>
+      <span className="crumb-border"></span>
       <div className="container">
         <div className="row">
           <div className="col-xs-12 a-left">

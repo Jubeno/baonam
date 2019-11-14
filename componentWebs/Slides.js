@@ -40,8 +40,8 @@ const Slides = ({ dataSlide }) => (
     <div className="keyv">
       <ul className=" kSlider">
         <Slider {...settings}>
-          {dataSlide && dataSlide.length > 0 && dataSlide.map((item) => (
-            <li className="slide1" >
+          {dataSlide && dataSlide.length > 0 && dataSlide.map((item,index) => (
+            <li className="slide1" key={index} >
                 <img src={`${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.contents}`} alt={item.title} />
             </li>
             ))}

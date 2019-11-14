@@ -76,6 +76,7 @@ class Index extends React.PureComponent {
     const imgHeader = `${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${header.image || ''}`
     log(' dataArticle%o', header, tdataArticle)
     return (
+      // Su khac biet cua bao nam
       <React.Fragment>
         <section className="awe-section-6">
           <section className="section_taisao" >

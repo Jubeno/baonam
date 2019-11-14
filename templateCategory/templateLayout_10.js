@@ -95,6 +95,7 @@ class Index extends React.PureComponent {
     // log(' dataArticle%o', data)
 
     return (
+      // Cam ket cua chung toi
       <React.Fragment>
         <section className="awe-section-10 margin-top-20">
           <section className="section_cauhoi">

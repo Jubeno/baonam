@@ -78,7 +78,7 @@ class Index extends React.PureComponent {
 
   render() {
     const { dataArticle } = this.props;
-    log(' dataArticle%o', dataArticle)
+    // log(' dataArticle%o', dataArticle)
     return (
       <React.Fragment>
         {/* <section className="awe-section-8">
