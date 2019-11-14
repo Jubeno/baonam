@@ -5,6 +5,7 @@ import Link from '../../lib/utils/ActiveLink'
 const BreadCrumb = ({ data }) => {
   return (
     <React.Fragment>
+      {/* chuan bi lam cho nay */}
       <section className="bread-crumb">
         <span className="crumb-border" />
         <div className="container">

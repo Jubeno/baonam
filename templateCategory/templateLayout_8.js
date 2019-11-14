@@ -2,10 +2,11 @@ import React from 'react';
 import getConfig from 'next/config'
 // import EncodeUrl from '@/utils/encode'
 // import Link from '@/utils/ActiveLink';
-import log from '@/utils/log';
+
 import WOW from 'wowjs';
 import '../static/web/js/lib/biggerlink.js';
-
+import $ from 'jquery';
+import log from '@/utils/log';
 
 const { publicRuntimeConfig } = getConfig()
 class Index extends React.PureComponent {
@@ -69,9 +70,9 @@ class Index extends React.PureComponent {
     $('.clientSet .clientList li .inside').biggerlink();
 
   }
+  
   render() {
     const { dataArticle } = this.props;
-
     log(' dataArticle%o', dataArticle)
     return (
       <React.Fragment>
