@@ -4,7 +4,7 @@ import getConfig from 'next/config'
 // import Link from '@/utils/ActiveLink';
 
 import WOW from 'wowjs';
-import '../static/web/js/lib/biggerlink.js';
+import '../static/web/js/lib/biggerlink';
 import $ from 'jquery';
 import log from '@/utils/log';
 
@@ -70,7 +70,7 @@ class Index extends React.PureComponent {
     $('.clientSet .clientList li .inside').biggerlink();
 
   }
-  
+
   render() {
     const { dataArticle } = this.props;
     log(' dataArticle%o', dataArticle)
