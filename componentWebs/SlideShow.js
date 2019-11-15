@@ -10,7 +10,7 @@ const { publicRuntimeConfig } = getConfig()
 // Breadcrumb - Khong thay doi
 
 const SlideShow = ({ advertisments, dataCategoryInfo }) => (
-  <div className="breadcrumb_background">
+  <div className="breadcrumb_background" style={{marginBottom:"20px"}}>
     <div className="title_full">
       <div className="container a-center">
         <p className="title_page_breadcrumb">{dataCategoryInfo || ''}</p>

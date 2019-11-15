@@ -17,7 +17,9 @@ class Index extends React.PureComponent {
   }
 
   componentDidMount() {
-    new WOW.WOW().init();
+    new WOW.WOW({
+      live: false
+    }).init();
   }
   
   render() {
@@ -82,47 +84,48 @@ class Index extends React.PureComponent {
         </div> */}
 
 
-        <div className="clientSet wow fadeIn" style={{visibility: 'hidden', animationName: 'none'}}>
+        
+
+        <div className="serviceSet wow fadeIn" style={{marginBottom: "-15px"}}>
           <div className="inner">
             <div className="info">
-              <h2 className="bhead">{data && data.name || ""}</h2>
-              <ul className="clientList">
-                
+              <h2 className="bhead center">{data && data.name || ""}</h2>
+              <ul className="serviceList clearfix">
                 {dataArticle && dataArticle.length > 0 && dataArticle.map((item,index) => {
-                    // console.log(index);
-                    // "item1 wow fadeInLeft"
-                    return (
-                      <li className={`item${index+1} wow fadeIn${index%2===0 ? 'Left' : 'Right'}`} data-wow-delay={`${(index+1)/10}s`} >
-                        <div className="inside">
-                          <p className="photo">
-                            <Link 
-                              path={`/User/Detail?categoryName=${item.categories && item.categories.name}&name=${EncodeUrl(item.title)}&articleId=${item.id}`}
-                              href={`/${EncodeUrl(item.categories && item.categories.name)}/${EncodeUrl(item.title)}/${item.id}`}
-                              title={item.title}
-                            ><img src={`${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image}`} alt={item.title} />
-                            </Link>
-                          </p>
-                          <div className="desc">
-                            <p className="name jubeno-a-tag">
-                              <Link
-                                title={item.title}
-                                path={`/User/Detail?categoryName=${item.categories && item.categories.name}&name=${EncodeUrl(item.title)}&articleId=${item.id}`}
-                                href={`/${EncodeUrl(item.categories && item.categories.name)}/${EncodeUrl(item.title)}/${item.id}`}
-                              >
-                                {item.title}
-                              </Link>
-                            </p>
-                            {/* <div className="text">Nguyên Trưởng khoa Phẫu thuật Tạo hình Thẩm mỹ, Bệnh viện Đại học Y Hà Nội.</div> */}
-                          </div>
-                        </div>
-                      </li>
-                    )
-                  })
-                  }                   
+                return (
+                  <li className={`item${index+1} wow fadeInUp`} data-wow-delay={`${(index+1)/10}s`} >
+                    <div className="inside">
+                      <p className="photo">
+                        <Link 
+                          path={`/User/Detail?categoryName=${item.categories && item.categories.name}&name=${EncodeUrl(item.title)}&articleId=${item.id}`}
+                          href={`/${EncodeUrl(item.categories && item.categories.name)}/${EncodeUrl(item.title)}/${item.id}`}
+                          title={item.title}
+                        ><img src={`${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image}`} alt={item.title} />
+                        </Link>
+                      </p>
+                      <p>
+                        <Link
+                          title={item.title}
+                          path={`/User/Detail?categoryName=${item.categories && item.categories.name}&name=${EncodeUrl(item.title)}&articleId=${item.id}`}
+                          href={`/${EncodeUrl(item.categories && item.categories.name)}/${EncodeUrl(item.title)}/${item.id}`}
+                        >
+                          {item.title}
+                        </Link>
+                      </p>
+                    </div>
+                  </li>
+                )
+              })
+              }         
+
+
+                
+
               </ul>
             </div>
           </div>
         </div>
+        
 
       </React.Fragment>
     );

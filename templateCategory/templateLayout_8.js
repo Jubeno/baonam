@@ -6,6 +6,7 @@ import getConfig from 'next/config'
 import WOW from 'wowjs';
 import '../static/web/js/lib/biggerlink';
 import $ from 'jquery';
+
 import log from '@/utils/log';
 
 
@@ -121,7 +122,7 @@ class Index extends React.PureComponent {
           </section>
         </section> */}
         
-        <div className="clientSet wow fadeIn" style={{visibility: 'visible', animationName: 'fadeIn'}}>
+        <div className="clientSet wow fadeIn">
           <div className="inner">
             <div className="info">
               <h2 className="bhead center">DỊCH VỤ</h2>

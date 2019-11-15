@@ -4,7 +4,9 @@ import getConfig from 'next/config'
 // import Link from '@/utils/ActiveLink';
 // import _ from "lodash"
 // import { url } from 'inspector';
+import WOW from 'wowjs';
 import log from '@/utils/log';
+
 
 
 const { publicRuntimeConfig } = getConfig()
@@ -20,6 +22,12 @@ class Index extends React.PureComponent {
       // Articles: [],
       // total: 0
     }
+  }
+
+  componentDidMount() {
+    new WOW.WOW({
+      live: false
+    }).init();
   }
 
   // componentDidMount() {
@@ -93,10 +101,10 @@ class Index extends React.PureComponent {
                     <div className="warp_taisao">
                       <div className="row">
                         {
-                          tdataArticle.map(item => {
+                          tdataArticle.map((item,index) => {
                             const img = `${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image || ''}`
                             return (
-                              <div className="col-lg-6 col-md-3 col-sm-6 col-xs-12">
+                              <div className={`wow fadeIn${index%2===0 ? 'Left' : 'Right'} col-lg-6 col-md-3 col-sm-6 col-xs-12`} data-wow-delay={`${(index+2)/10}s`}>
                                 <div className="wrap_item_taisao">
                                   <div className="image_taisao">
                                     <img src={img} alt={item.title} style={{ width: 51, height: 51 }} />

@@ -1,7 +1,12 @@
 /* eslint-disable no-unused-expressions */
 import React from 'react';
 import getConfig from 'next/config'
-import _ from "lodash"
+import _ from "lodash";
+
+import WOW from 'wowjs';
+import '../static/web/js/lib/biggerlink';
+import $ from 'jquery';
+
 import EncodeUrl from '@/utils/encode'
 import Link from '@/utils/ActiveLink';
 import log from '@/utils/log';
@@ -25,6 +30,14 @@ class Index extends React.PureComponent {
 
       // total: 0
     }
+  }
+
+  componentDidMount() {
+    new WOW.WOW({
+      live: false
+    }).init();
+    $('.clientSet .clientList li .inside').biggerlink();
+    // wow.sync();
   }
 
   // componentDidMount() {
@@ -97,7 +110,7 @@ class Index extends React.PureComponent {
     return (
       // Cam ket cua chung toi
       <React.Fragment>
-        <section className="awe-section-10 margin-top-20">
+        {/* <section className="awe-section-10 margin-top-20">
           <section className="section_cauhoi">
             <div className="container">
               <div className="row">
@@ -111,7 +124,6 @@ class Index extends React.PureComponent {
                     <div className="row wrap_question_js">
 
                       {
-                        // eslint-disable-next-line array-callback-return
                         (datas || []).map((items, index) => (
                           <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             {
@@ -134,42 +146,7 @@ class Index extends React.PureComponent {
 
                           </div>))
                       }
-                      {/* <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
-                        <div className="itemquestion item_js col-click">
-                          <div className="title"><h4>Tôi có thể đặt hẹn khám như thế nào?</h4></div>
-                          <div className="content content_question" style={{ display: 'none' }}>
-                            <p>Việc đặt hẹn khám trước sẽ giúp cho Quý vị có thể chủ động thời gian đi khám và Bệnh viện cũng chủ động bố trí nhân lực khám giúp mang đến cho Quý vị dịch vụ tốt hơn. Quý vị cần đặt hẹn trước giờ dự định đến khám ít nhất 24 giờ, nhân viên của chúng tôi sẽ liên lạc lại với Quý vị để xác nhận đặt hẹn.</p>
-                          </div>
-                        </div>
-                        <div className="itemquestion item_js col-click">
-                          <div className="title"><h4>Tôi sẽ gặp bác sĩ khám nào?</h4></div>
-                          <div className="content content_question" style={{ display: 'none' }}>
-                            <p>Quý vị có quyền lựa chọn bác sĩ nếu bác sĩ đó có lịch ở phòng khám. Trường hợp bác sĩ không có lịch khám ngày hôm đó, chúng tôi sẽ liên hệ với bác sĩ đó và quý vị có thể được khám bác sĩ đó nếu bác sĩ đồng ý.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div className="itemquestion item_js col-click">
-                          <div className="title"><h4>Tôi sẽ mất thời gian bao lâu?</h4></div>
-                          <div className="content content_question" style={{ display: 'none' }}>
-                            <p>Quá trình khám bệnh của quý vị thông thường sẽ kéo dài trong khoảng 1-3 tiếng, tùy thuộc vào tình trạng bệnh, số lượng chỉ định cận lâm sàng và số lượng bệnh nhân khám trong ngày. Với các bệnh nhân có kết quả khám bất thường hoặc cần phải làm thêm các xét nghiệm chuyên sâu, thời gian khám có thể kéo dài hơn.</p>
-                          </div>
-                        </div>
-                        <div className="itemquestion item_js col-click">
-                          <div className="title"><h4>Tôi có thể sử dụng hình thức thanh toán nào?</h4></div>
-                          <div className="content content_question" style={{ display: 'none' }}>
-                            <p>Quý vị có thể thanh toán bằng tiền mặt và/hoặc thẻ tín dụng (Master card/Visa card) và/hoặc thẻ ATM của các ngân hàng trong nước.</p>
-                          </div>
-                        </div>
-                        <div className="itemquestion item_js col-click">
-                          <div className="title"><h4>Cần chuẩn bị gì trước khi khám sức khỏe định kỳ?</h4></div>
-                          <div className="content content_question" style={{ display: 'none' }}>
-                            <p>Cần chuẩn bị gì trước khi khám sức khỏe định kỳ?
-                        Để việc kiểm tra sức khỏe định kỳ đạt hiệu quả cao nhất, trước khi khám sức khỏe bạn cần: - Xem lại tiền sử sức khỏe của gia đình: cần báo cho bác sĩ biết các thông tin về sức khỏe và bệnh tật của các thành viên trong gia đình mình, từ đó bác sĩ sẽ đánh giá nguy cơ bệnh của bạn dựa trên tiền sử bệnh của gia đình gia đình vì yếu tố này có thể làm bạn tăng nguy cơ một số bệnh như đái tháo đường, ung thư, bệnh tim và đột quỵ.</p>
-                          </div>
-                        </div>
-                      </div> */}
+                      
                     </div>
 
                   </div>
@@ -177,7 +154,39 @@ class Index extends React.PureComponent {
               </div>
             </div>
           </section>
-        </section>
+        </section> */}
+
+
+
+
+        <div className="clientSet wow fadeIn">
+          <div className="inner"> 
+            <div className="info">
+              <h2 className="bhead center white">{data.name || ""}</h2>
+              <ul className="clientList">
+                {
+                  (dataArticle || []).map((item,index) => {
+                    // const img = `${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image || ''}`
+                    // console.log(item);
+                    return (
+                      <li className={`item1 wow fadeIn${index%2===0 ? 'Left' : 'Right' }`} data-wow-delay={`${(index)/10}s`}>
+                        <div className="inside bl-hot" style={{cursor: 'pointer'}}>
+                          {/* <p className="photo"><a href="/" className="bl-bigger"><img style={{width:"75px",height:"75px"}} src={`${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image}`} alt={item.title} /></a></p> */}
+                          <div className="desc" style={{width:"100%"}}>
+                            <p className="name"><a href="/" className="bl-bigger">{item.title}</a></p>
+                            {/* <div className="text">{item.shortDescription || ''}</div> */}
+                          </div>
+                        </div>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
       </React.Fragment>
     );
   }

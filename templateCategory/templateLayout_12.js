@@ -1,18 +1,33 @@
 import React from 'react';
 import getConfig from 'next/config'
-import EncodeUrl from '@/utils/encode'
+import EncodeUrl from '@/utils/encode';
+
+import WOW from 'wowjs';
+import '../static/web/js/lib/biggerlink';
+import $ from 'jquery';
+
+
 import Link from '@/utils/ActiveLink';
 
 const { publicRuntimeConfig } = getConfig()
 class Index extends React.PureComponent {
   // Nguyen tac kham chua
+  componentDidMount() {
+    new WOW.WOW({
+      live: false
+    }).init();
+
+    $('.clientSet .clientList li .inside').biggerlink();
+
+  }
+
   render() {
     const { data, dataArticle } = this.props;
     const tdataArticle = dataArticle && dataArticle.length >= 4 ? dataArticle.slice(0, 5) : dataArticle
 
     return (
       <React.Fragment>
-        <section className="page">
+        {/* <section className="page">
           <div className="wrap_about">
             <div className="content-page rte">
               <section className="uytin"
@@ -20,7 +35,6 @@ class Index extends React.PureComponent {
                   backgroundImage: "url('/static/web/images/anhtinhnang.png')"
                 }}
               >
-                {/* <img src="//bizweb.dktcdn.net/100/330/752/themes/714267/assets/bg_uytin.jpg?1554093518815" /> */}
                 < div className="container" >
                   <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -52,7 +66,36 @@ class Index extends React.PureComponent {
               </section>
             </div>
           </div>
-        </section>
+        </section> */}
+
+
+
+        <div className="clientSet wow fadeIn">
+          <div className="inner"> 
+            <div className="info">
+              <h2 className="bhead center white">{data.name || ""}</h2>
+              <ul className="clientList">
+                {
+                  (dataArticle || []).map(item => {
+                    const img = `${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image || ''}`
+                    // console.log(item);
+                    return (
+                      <li className="item1 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div className="inside bl-hot" style={{cursor: 'pointer'}}>
+                          <p className="photo"><a href="/" className="bl-bigger"><img style={{width:"75px",height:"75px"}} src={`${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image}`} alt={item.title} /></a></p>
+                          <div className="desc">
+                            <p className="name"><a href="/" className="bl-bigger">{item.title}</a></p>
+                            <div className="text">{item.shortDescription || ''}</div>
+                          </div>
+                        </div>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
       </React.Fragment >
     );
   }

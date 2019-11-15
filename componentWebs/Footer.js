@@ -226,14 +226,7 @@ class Footer extends PureComponent {
             
 
             <div className="fSet set4">
-              {/* <p className="caption">Follow us</p>
-              <ul className="social">
-                <li><a href="https://www.facebook.com/" target="_blank"><span className="fb">fb</span></a></li>
-                <li><a href="https://twitter.com/" target="_blank"><span className="twitter">twitter</span></a></li>
-                <li><a href="https://plus.google.com/" target="_blank"><span className="gplus">gplus</span></a></li>
-                <li><a href="https://www.instagram.com/" target="_blank"><span className="insta">insta</span></a></li>
-              </ul>
-              <p className="booking"><a href="http://hanoiplasticsurgery.org/lien-he/" className="btn1"><span><i className="lnr lnr-pencil" /> <em>Đặt hẹn </em>tư vấn</span></a></p> */}
+             
               <div className="wraplock">
                 <div className="imagelock"><img src="/static/web/images/clock.png" alt="clock" /></div>
                 <h4>Giờ làm việc</h4>

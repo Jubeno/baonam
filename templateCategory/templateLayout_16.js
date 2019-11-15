@@ -10,8 +10,8 @@ class Index extends React.PureComponent {
     // console.log(dataCategoryAll, dataCategoryAll)
     return (
       <React.Fragment>
-        <section className="page margin-top-20">
-          {/* <div className="container">
+      {/* <section className="page">
+   <div className="container">
             <div className="row">
               <div className="col-xs-12 col-sm-12 col-md-12">
                 <div className="page-title a-center">
@@ -19,9 +19,9 @@ class Index extends React.PureComponent {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div> 
           <div className="wrap_about">
-            <div className="content-page rte">
+            <div className="content-page rte">*/}
               {/* <div className="container">
                 <div className="row">
                   <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
@@ -39,9 +39,9 @@ class Index extends React.PureComponent {
                 return null
                 // return renderTemplatesCategory([item], ArticleAll)
               })}
-            </div>
+            {/* </div>
           </div>
-        </section>
+        </section> */}
       </React.Fragment>
     );
   }
