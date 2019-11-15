@@ -11,7 +11,7 @@ import Link from '@/utils/ActiveLink';
 
 const { publicRuntimeConfig } = getConfig()
 class Index extends React.PureComponent {
-  // Nguyen tac kham chua
+  
   componentDidMount() {
     new WOW.WOW({
       live: false
@@ -26,6 +26,7 @@ class Index extends React.PureComponent {
     const tdataArticle = dataArticle && dataArticle.length >= 4 ? dataArticle.slice(0, 5) : dataArticle
 
     return (
+      // Nguyen tac kham chua
       <React.Fragment>
         {/* <section className="page">
           <div className="wrap_about">
@@ -70,17 +71,17 @@ class Index extends React.PureComponent {
 
 
 
-        <div className="clientSet wow fadeIn">
-          <div className="inner"> 
+        <div className="clientSet wow fadeIn" style={{display: "inline-block", width:"100%"}}>
+          <div className="inner center"> 
             <div className="info">
               <h2 className="bhead center white">{data.name || ""}</h2>
               <ul className="clientList">
                 {
-                  (dataArticle || []).map(item => {
+                  (dataArticle || []).map((item,index) => {
                     const img = `${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image || ''}`
                     // console.log(item);
                     return (
-                      <li className="item1 wow fadeInLeft" data-wow-delay="0.1s">
+                      <li className={`item${index+1} wow fadeIn${index%2===0 ? 'Left' : 'Right' }`} data-wow-delay={`${(index)/15}s`}>
                         <div className="inside bl-hot" style={{cursor: 'pointer'}}>
                           <p className="photo"><a href="/" className="bl-bigger"><img style={{width:"75px",height:"75px"}} src={`${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image}`} alt={item.title} /></a></p>
                           <div className="desc">
@@ -96,7 +97,7 @@ class Index extends React.PureComponent {
             </div>
           </div>
         </div>
-      </React.Fragment >
+      </React.Fragment>
     );
   }
 }

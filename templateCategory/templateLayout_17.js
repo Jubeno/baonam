@@ -3,7 +3,7 @@ import React from 'react';
 import getConfig from 'next/config';
 import EncodeUrl from '@/utils/encode';
 
-import WOW from 'wowjs';
+// import WOW from 'wowjs';
 
 import Link from '@/utils/ActiveLink';
 
@@ -17,10 +17,16 @@ class Index extends React.PureComponent {
   }
 
   componentDidMount() {
-    new WOW.WOW({
-      live: false
-    }).init();
-  }
+    // new WOW.WOW({
+    //   live: false
+    // }).init();
+  //   const script = document.createElement("script");
+
+  //   script.src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js";
+  //   script.async = true;
+
+  //   document.body.appendChild(script);
+   }
   
   render() {
     const { data, dataArticle } = this.props;
@@ -86,7 +92,7 @@ class Index extends React.PureComponent {
 
         
 
-        <div className="serviceSet wow fadeIn" style={{marginBottom: "-15px"}}>
+        <div className="serviceSet wow fadeIn" style={{marginBottom: "-15px", display:"flow-root"}}>
           <div className="inner">
             <div className="info">
               <h2 className="bhead center">{data && data.name || ""}</h2>

@@ -24,11 +24,14 @@ class Index extends React.PureComponent {
     }
   }
 
-  componentDidMount() {
-    new WOW.WOW({
-      live: false
-    }).init();
-  }
+  // componentDidMount() {
+  //   const script = document.createElement("script");
+
+  //   script.src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js";
+  //   script.async = true;
+
+  //   document.body.appendChild(script);
+  // }
 
   // componentDidMount() {
   //   // const { data, query } = this.props;

@@ -8,8 +8,8 @@ import { routes } from '@/config/router.config';
 // import getConfig from 'next/config'
 import Link from '@/utils/ActiveLink';
 import '../static/web/js/lib/jquery-scrolltofixed';
-import 'jquery';
-import '../static/web/js/lib/common';
+import $ from 'jquery';
+// import '../static/web/js/lib/common';
 // const { publicRuntimeConfig } = getConfig()
 const routesWeb = routes.web;
 
@@ -36,9 +36,17 @@ class Header extends PureComponent {
       keyChildren: ""
     }
   }
+
   componentDidMount() {
     $('#header').scrollToFixed();
+          const script = document.createElement("script");
+
+      script.src = "../static/web/js/lib/common.js";
+      script.async = true;
+
+      document.body.appendChild(script);
   }
+
   showMenu = () => {
     const { openMenu } = this.state
     this.setState({ openMenu: !openMenu })
@@ -158,13 +166,13 @@ class Header extends PureComponent {
         <header id="header">
           <div className="hInner clearfix">
             <div className="hSet">
-              <a href="http://hanoiplasticsurgery.org/" id="logo">
+              <a href="/" id="logo">
                 <Link href="/" path="/index" className="logo-wrapper " style={{ width: '100px' }}>
                   <img src="/static/web/images/logo.png" alt="logo Medisan" />
                 </Link>
               </a>
               <p className="hCall sp"><a href="tel:0983364455"><img src="/static/web/img/common/tel.svg" alt="" /></a></p>
-              <p className="hamburger sp"><a href="javascript:void(0)"><span className="ham">&nbsp;</span><span className="bur">&nbsp;</span><span className="ger">&nbsp;</span></a></p>
+              <p className="hamburger sp"><a href="#"><span className="ham">&nbsp;</span><span className="bur">&nbsp;</span><span className="ger">&nbsp;</span></a></p>
             </div>
           
             <div className="naviSet">
@@ -218,7 +226,7 @@ class Header extends PureComponent {
                               const check = item.children.filter((items) => (items.url === pathname))
                               // console.log("dsa", check)
                               return (
-                                <li className={check && check.length > 0 ? "item3 hasSub active " : "item3 hasSub  "} key={`hearder_${item.id}`}>
+                                <li className={check && check.length > 0 ? "item3 hasSub jubeno_subMenu active " : "item3 hasSub jubeno_subMenu "} key={`hearder_${item.id}`}>
                                   <a className="nav-link pc">
                                     {item.name} <i className="fa fa-caret-down" data-toggle="dropdown" />
                                     <span className="label_">

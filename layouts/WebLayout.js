@@ -155,6 +155,14 @@ export default ComposedComponent => {
           },3000)
         }) */
       }
+
+      // wowjs
+      // const script = document.createElement("script");
+
+      // script.src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js";
+      // script.async = true;
+
+      // document.body.appendChild(script);
     }
 
 
@@ -211,6 +219,7 @@ export default ComposedComponent => {
               `
               }}
             />
+            
           </Head>
           {/* <PluginFacebook /> */}
           <Header

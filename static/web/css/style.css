@@ -7062,3 +7062,18 @@ form.contact_form {
 .jubeno-a-tag a{
     color: aquamarine;
 }
+
+@media(min-width:1200px) {
+    .jubeno_margin{
+        margin-left: 250px!important;
+    }
+}
+@media(max-width:768px) {
+    .jubeno_margin{
+        margin-left: 0;
+    }
+}
+
+.center{
+    text-align: center!important;
+}

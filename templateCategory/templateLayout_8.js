@@ -12,8 +12,9 @@ import log from '@/utils/log';
 
 
 
-// co them dong nay khong
-//co nhe
+
+
+
 const { publicRuntimeConfig } = getConfig()
 class Index extends React.PureComponent {
   constructor(props) {
@@ -24,6 +25,7 @@ class Index extends React.PureComponent {
     }
   }
 
+  
   // componentDidMount() {
   //   // const { data, query } = this.props;
   //   // let dataArrticles = ''
@@ -71,10 +73,13 @@ class Index extends React.PureComponent {
   // }
   
   componentDidMount() {
-    new WOW.WOW().init();
+    new WOW.WOW({
+      live: false
+    }).init();
 
     $('.clientSet .clientList li .inside').biggerlink();
-
+  
+    
   }
 
   render() {
@@ -122,17 +127,17 @@ class Index extends React.PureComponent {
           </section>
         </section> */}
         
-        <div className="clientSet wow fadeIn">
+        <div className="clientSet wow fadeIn" style={{marginBottom: "-15px"}}>
           <div className="inner">
             <div className="info">
               <h2 className="bhead center">DỊCH VỤ</h2>
               <ul className="clientList">
                 {
-                  (dataArticle || []).map(item => {
+                  (dataArticle || []).map((item,index) => {
                     const img = `${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image || ''}`
-                    // console.log(item);
+                
                     return (
-                      <li className="item1 wow fadeInLeft" data-wow-delay="0.1s" style={{visibility: 'visible', animationDelay: '0.1s', animationName: 'fadeInLeft'}}>
+                      <li className={`item${index+1} wow fadeInUp`} data-wow-delay={`${(index+1)/10}s`}>
                         <div className="inside bl-hot" style={{cursor: 'pointer'}}>
                           <p className="photo"><a href="/" className="bl-bigger"><img src={img} alt={item.title} /></a></p>
                           <div className="desc">

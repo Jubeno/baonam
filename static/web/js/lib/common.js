@@ -26,8 +26,11 @@ $(function() {
 	}
 	
 	/* menu header SP */
-	$('.hamburger, .naviSet .close, .naviSet .gNavi li a').click(function(){
-		$("body").toggleClass("layerOn");
+	// $('.hamburger, .naviSet .close, .naviSet .gNavi li a').click(function(){
+	// 	$("body").toggleClass("layerOn");  //origin
+	// });
+	$('.hamburger').click(function(){
+		$("body").toggleClass("layerOn"); //edited, dont add class layerOn into "body" to load script. dont know why, but it ran :D
 	});
 	
 	/* pageTop */
@@ -41,8 +44,21 @@ $(function() {
 	
 	/* for gNavi PC */
 	if($(window).width() > 767){
-		var btn = $(".gNavi .hasSub");
+		var btn = $(".jubeno_subMenu");
+		
 		var submenu = $(".navSub");
+
+		$(btn).click(function(){
+			var shownav = $(this).find(".navSub");
+			if($(shownav).css("display")=="none") {
+				$(shownav).slideDown("fast");
+				$(this).addClass('active');
+			}else{
+				$(shownav).slideUp("fast");
+				$(this).removeClass('active');
+			}
+		})
+
 		$(btn).hover(function() {
 			var shownav = $(this).find(".navSub");
 			if($(shownav).css("display")=="none") {
