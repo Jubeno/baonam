@@ -30,6 +30,9 @@ class Index extends React.PureComponent {
   
   render() {
     const { data, dataArticle } = this.props;
+    const pathname = window.location.pathname;
+    
+    
     return (
       // Doi ngu y bac sy
       <React.Fragment>
@@ -98,8 +101,16 @@ class Index extends React.PureComponent {
               <h2 className="bhead center">{data && data.name || ""}</h2>
               <ul className="serviceList clearfix">
                 {dataArticle && dataArticle.length > 0 && dataArticle.map((item,index) => {
+                  
+                  // console.log(pathname);
+                  // console.log(item);
+                  
                 return (
-                  <li className={`item${index+1} wow fadeInUp`} data-wow-delay={`${(index+1)/10}s`} >
+                  <li 
+                    className={`item${index+1} wow fadeInUp ${pathname === '/gioi-thieu-30' ? "" : "jubeno_diff_2_page" }`} 
+                    data-wow-delay={`${(index+1)/10}s`}
+                    
+                  >
                     <div className="inside">
                       <p className="photo">
                         <Link 
