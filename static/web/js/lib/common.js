@@ -48,16 +48,16 @@ $(function() {
 		
 		var submenu = $(".navSub");
 
-		$(btn).click(function(){
-			var shownav = $(this).find(".navSub");
-			if($(shownav).css("display")=="none") {
-				$(shownav).slideDown("fast");
-				$(this).addClass('active');
-			}else{
-				$(shownav).slideUp("fast");
-				$(this).removeClass('active');
-			}
-		})
+		// $(btn).click(function(){
+		// 	var shownav = $(this).find(".navSub");
+		// 	if($(shownav).css("display")=="none") {
+		// 		$(shownav).slideDown("fast");
+		// 		$(this).addClass('active');
+		// 	}else{
+		// 		$(shownav).slideUp("fast");
+		// 		$(this).removeClass('active');
+		// 	}
+		// })
 
 		$(btn).hover(function() {
 			var shownav = $(this).find(".navSub");

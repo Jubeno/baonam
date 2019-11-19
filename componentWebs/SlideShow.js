@@ -7,7 +7,6 @@ const { publicRuntimeConfig } = getConfig()
 
 // import styles from './Slides.less';
 
-// Breadcrumb - Khong thay doi
 
 const SlideShow = ({ advertisments, dataCategoryInfo }) => (
   <div className="breadcrumb_background">

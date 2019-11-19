@@ -150,7 +150,7 @@ class Index extends React.PureComponent {
                   })
                 }
               </ul>
-              <p className="more"><a href="http://hanoiplasticsurgery.org/nhan-su/" className="btn1"><span>Xem thêm</span></a></p>
+              {/* <p className="more"><a href="http://hanoiplasticsurgery.org/nhan-su/" className="btn1"><span>Xem thêm</span></a></p> */}
             </div>
           </div>
         </div>

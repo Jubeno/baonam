@@ -170,7 +170,7 @@ class Index extends React.PureComponent {
                     // console.log(item);
                     return (
                       <li className={`item${index+1} wow fadeIn${index%2===0 ? 'Left' : 'Right' }`} data-wow-delay={`${(index)/15}s`} style={{width: "100%"}}>
-                        <div className="inside bl-hot" style={{cursor: 'pointer'}}>
+                        <div className="inside bl-hot" style={{cursor: 'none'}}>
                           {/* <p className="photo"><a href="/" className="bl-bigger"><img style={{width:"75px",height:"75px"}} src={`${publicRuntimeConfig.IMAGE_DAS_SERVER}/${publicRuntimeConfig.IMAGE_PROJECT}/${item.image}`} alt={item.title} /></a></p> */}
                           <div className="desc" style={{width:"100%"}}>
                             <p className="name"><a href="/" className="bl-bigger">{item.title}</a></p>

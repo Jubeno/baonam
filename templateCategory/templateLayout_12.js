@@ -71,8 +71,8 @@ class Index extends React.PureComponent {
 
 
 
-        <div className="clientSet wow fadeIn" style={{display: "inline-block", width:"100%"}}>
-          <div className="inner center"> 
+        <div className="clientSet wow fadeIn" style={{width:"100%"}}>
+          <div className="inner"> 
             <div className="info">
               <h2 className="bhead center white">{data.name || ""}</h2>
               <ul className="clientList">

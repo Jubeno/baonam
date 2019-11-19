@@ -172,7 +172,7 @@ class Footer extends PureComponent {
           <a href="#" id="back-to-top" className="backtop back-to-top" title="Lên đầu trang"><i className="fa fa-arrow-up" /></a>
         </footer> */}
 
-        <footer id="footer">
+        <footer id="footer" style={{display: "grid"}}>
           <div className="fInner clearfix">
 
             <div className="fSet set1">
