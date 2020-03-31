@@ -55,7 +55,7 @@
     "lodash-decorators": "^6.0.1",
     "memoize-one": "^5.0.0",
     "moment": "^2.22.2",
-    "next": "^8.0.3",
+    "next": "^9.3.3",
     "next-cookies": "^1.1.2",
     "next-fonts": "^0.17.0",
     "next-images": "^1.0.4",
